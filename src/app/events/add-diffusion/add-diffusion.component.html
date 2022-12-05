@@ -1,0 +1,59 @@
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12" style="padding-left: 280px;">
+            <div class="card my-4">
+                <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                    <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3"
+                        style="background-color:#6f42c1 ;">
+                        <h6 class="text-white text-capitalize ps-3">Diffusion add</h6>
+                    </div>
+                </div>
+                <div class="card-body px-0 pb-2">
+                    <div class="table-responsive p-0">
+                        <form [formGroup]="form" (ngSubmit)="saveData()" class="text-start">
+                            <div class="input-group input-group-outline my-3 col-10">
+                                <label for="" class="form-label">Titre<span *ngIf="form.controls.titre.valid == false"
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control" formControlName="titre"
+                                    style="margin-left: 100px;">
+                            </div>
+                            
+                            <div class="input-group input-group-outline my-3 col-10">
+                                <label for="" class="form-label">Diffusion Date<span
+                                        *ngIf="form.controls.dateDiffusion.valid == false"
+                                        class="text-danger">*</span></label>
+                                <input type="date" class="form-control" formControlName="dateDiffusion"
+                                    style="margin-left: 100px;">
+                            </div>
+
+                            <div class="input-group input-group-outline my-3 col-10">
+                                <label for="" class="form-label">Beggining Hour<span *ngIf="form.controls.heureDebut.valid == false"
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control" formControlName="heureDebut"
+                                    style="margin-left: 100px;">
+                            </div>
+
+                            <div class="input-group input-group-outline my-3 col-10">
+                                <label for="" class="form-label">End hour<span *ngIf="form.controls.heureFin.valid == false"
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control" formControlName="heureFin"
+                                    style="margin-left: 100px;">
+                            </div>
+                            <div class="input-group input-group-outline my-3 col-6" style="margin-left:300px ;">
+                                <button type="submit" class="btn bg-gradient-primary mt-4 w-40"
+                                    [disabled]="! form.valid">Save</button>
+                            </div>
+                            <div class="alert alert-success alert-dismissible text-white my-3 col-8"
+                                style="margin-left: 100px;" role="alert" *ngIf="successMessage != '' ">
+                                {{ successMessage }}
+                            </div>
+                            <div class="alert alert-danger" *ngIf="errorMessage != '' ">
+                                {{ errorMessage }}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="container-fluid px-2 px-md-10 col-10" style="padding-left: 280px;">
+    <div class="page-header min-height-150 border-radius-xl mt-4"
+        style="background-image: url('https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+        <span class="mask  bg-gradient-primary  opacity-6"></span>
+    </div>
+    <div class="card card-body mx-3 mx-md-4 mt-n6 col-12" *ngIf="event">
+        <div class="row gx-4 mb-2">
+            <div class="col-6">
+                <div class="avatar avatar-xl position-relative" >
+                    <img src="assets/img/bruce-mars.jpg" class="w-110 border-radius-lg shadow-sm" style="width: 225px;height: 210px;margin-top: 200px;margin-left: 170px;">
+                </div>
+            </div>
+            <div class="col-auto my-auto">
+                <div class="h-100">
+                    <h5 class="mb-1">
+                        {{event.nom}} 
+                    </h5>
+                    <p class="mb-0 font-weight-normal text-sm">
+                        Created  {{event.dateAjout | date:'M/d/yy'}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+                
+                <div class="col-12 col-xl-11">
+                    <div class="card card-plain h-100">
+                        <div class="card-header pb-0 p-3">
+                            <div class="row">
+                                <div class="col-md-8 d-flex align-items-center">
+                                    <h6 class="mb-0">Event Information</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <p class="text-sm">
+                                Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally
+                                difficult paths, choose the one more painful in the short term (pain avoidance is
+                                creating an illusion of equality).
+                            </p>
+                            <hr class="horizontal gray-light my-4">
+                            
+                            <div class="input-group input-group-outline my-3 col-6" style="margin-left:250px ;">
+                                <button type="submit" class="btn bg-gradient-primary mt-4 w-40" (click)="list()" >Back</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid px-2 px-md-10 col-10" style="padding-left: 280px;">
+    
+    <div class="row">
+        
+      <div class="col-md-12 mt-4" style="margin-left: 25px;">
+        <div class="card">
+            
+          <div class="card-header pb-0 px-3">
+            <h6 class="mb-0">Diffusion Information</h6>
+          </div>
+          
+          <div class="card-body pt-4 p-3">
+            <ul class="list-group" *ngIf="event.listDiff">
+              <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg" *ngFor="let d of event.listDiff">
+                <div class="d-flex flex-column">
+                  <h6 class="mb-3 text-sm">{{d.titre}}</h6>
+                  <span class="mb-2 text-xs">Diffusion Date : <span class="text-dark font-weight-bold ms-sm-2">{{d.dateDiffusion| date:'M/d/yy'}}</span></span>
+                  <span class="mb-2 text-xs">Beginning Hour : <span class="text-dark ms-sm-2 font-weight-bold">{{d.heureDebut}}</span></span>
+                  <span class="text-xs">End Time : <span class="text-dark ms-sm-2 font-weight-bold">{{d.heureFin}} {{d.id}}</span></span>
+                </div>
+                <div class="ms-auto text-end">
+                  <a class="btn btn-link text-danger text-gradient px-3 mb-0" (click)="deleteDiff(d.id)"><i class="material-icons text-sm me-2" >delete</i>Delete</a>
+                  <a class="btn btn-link text-dark px-3 mb-0" [routerLink]="['/events/diffupdate', d.id]"><i class="material-icons text-sm me-2">edit</i>Edit</a>
+                </div>
+              </li>
+              
+              
+            </ul>
+            <div class="input-group input-group-outline my-3 col-6" style="margin-left:250px ;">
+                <button type="submit" class="btn bg-gradient-primary mt-4 w-40" [routerLink]="['/events/diffadd', event.id]" >Add new </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>

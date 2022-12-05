@@ -8,6 +8,7 @@ import { SidemenuComponent } from './components/admin/sidemenu/sidemenu.componen
 import { SalesStatisticsComponent } from './components/sales-statistics/sales-statistics.component';
 import { TodayStatisticsComponent } from './components/today-statistics/today-statistics.component';
 import { EventListComponent } from './components/event-list/event-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { EventListComponent } from './components/event-list/event-list.component
   ],
   imports: [
     BrowserModule,
+    HttpClientModule, 
     AppRoutingModule
   ],
   providers: [],
