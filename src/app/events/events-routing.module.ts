@@ -12,7 +12,8 @@ const routes: Routes = [
 { path: 'diffadd/:id', component: AddDiffusionComponent },
 { path: 'diffupdate/:id', component: UdateDiffusionComponent },
 { path: 'details/:id', component: DetailsComponent },
-{ path: 'update/:id', component: AddComponent },];
+{ path: 'update/:id', component: AddComponent }];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

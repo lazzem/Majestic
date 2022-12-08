@@ -7,6 +7,11 @@ import { ListComponent } from './list/list.component';
 import { AddComponent } from './add/add.component';
 import { DetailsComponent } from './details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from '../components/admin/header/header.component';
+import { SidemenuComponent } from '../components/admin/sidemenu/sidemenu.component';
+import { AppModule } from '../app.module';
+import { HeaderModule } from '../components/admin/header/header.module';
+import { SidemenuModule } from '../components/admin/sidemenu/sidemenu.module';
 
 
 @NgModule({
@@ -21,7 +26,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     UsersRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HeaderModule,
+    SidemenuModule
   ]
 })
 export class UsersModule { }

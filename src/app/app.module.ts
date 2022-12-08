@@ -9,12 +9,12 @@ import { SalesStatisticsComponent } from './components/sales-statistics/sales-st
 import { TodayStatisticsComponent } from './components/today-statistics/today-statistics.component';
 import { EventListComponent } from './components/event-list/event-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SidemenuComponent,
     SalesStatisticsComponent,
     TodayStatisticsComponent,
     EventListComponent
@@ -23,6 +23,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule, 
     AppRoutingModule
+  ],
+  exports : [
+    CommonModule, 
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

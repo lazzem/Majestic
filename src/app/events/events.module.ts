@@ -9,6 +9,11 @@ import { DetailsComponent } from './details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddDiffusionComponent } from './add-diffusion/add-diffusion.component';
 import { UdateDiffusionComponent } from './udate-diffusion/udate-diffusion.component';
+import { HeaderComponent } from '../components/admin/header/header.component';
+import { SidemenuComponent } from '../components/admin/sidemenu/sidemenu.component';
+import { AppModule } from '../app.module';
+import { HeaderModule } from '../components/admin/header/header.module';
+import { SidemenuModule } from '../components/admin/sidemenu/sidemenu.module';
 
 
 @NgModule({
@@ -24,7 +29,9 @@ import { UdateDiffusionComponent } from './udate-diffusion/udate-diffusion.compo
     CommonModule,
     EventsRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HeaderModule,
+    SidemenuModule
   ]
 })
 export class EventsModule { }
